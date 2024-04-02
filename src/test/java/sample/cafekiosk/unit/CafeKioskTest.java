@@ -1,5 +1,6 @@
 package sample.cafekiosk.unit;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import sample.cafekiosk.unit.beverage.Americano;
 import sample.cafekiosk.unit.beverage.Latte;
@@ -13,6 +14,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class CafeKioskTest {
 
     @Test
+    @DisplayName("음료 1개를 추가하면 주문 목록에 담긴다.")
     void add() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -28,6 +30,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료를 여러개 씩 주문 목록에 담을 수 있다.")
     void addSeveralBeverages() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -43,6 +46,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료는 1잔 이상 주문해아한다.")
     void addZeroBeverages() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -54,6 +58,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문 목록에서 음료를 제거한다.")
     void remove() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -68,6 +73,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문 목록을 초기화한다.")
     void clear() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -84,6 +90,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문 목록의 총 금액을 계산한다.")
     void calculateTotalPrice() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -101,6 +108,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("영업 시간에 주문을 생성한다.")
     void createOrder() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -117,6 +125,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("영업 시작 시간 이전에는 주문을 생성할 수 없다.")
     void createOrderOutsizeOpenTime() {
         // given
         CafeKiosk cafeKiosk = new CafeKiosk();
