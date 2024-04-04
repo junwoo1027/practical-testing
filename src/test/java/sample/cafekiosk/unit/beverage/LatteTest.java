@@ -10,7 +10,7 @@ class LatteTest {
     void getName() {
         Latte latte = new Latte();
 
-        assertThat(latte.getName()).isEqualTo("라뗴");
+        assertThat(latte.getName()).isEqualTo("라떼");
     }
 
     @Test
