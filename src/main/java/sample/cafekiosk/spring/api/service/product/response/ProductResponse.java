@@ -6,7 +6,7 @@ import sample.cafekiosk.spring.domain.product.ProductType;
 
 public record ProductResponse(
         Long id,
-        String ProductNumber,
+        String productNumber,
         ProductType type,
         ProductSellingStatus sellingStatus,
         String name,
