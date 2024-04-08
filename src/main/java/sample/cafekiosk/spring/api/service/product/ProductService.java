@@ -2,11 +2,11 @@ package sample.cafekiosk.spring.api.service.product;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sample.cafekiosk.spring.api.controller.product.request.CreateProductRequest;
-import sample.cafekiosk.spring.domain.product.response.ProductResponse;
+import sample.cafekiosk.spring.api.service.product.request.CreateProductServiceRequest;
 import sample.cafekiosk.spring.domain.product.Product;
 import sample.cafekiosk.spring.domain.product.ProductRepository;
 import sample.cafekiosk.spring.domain.product.ProductSellingStatus;
+import sample.cafekiosk.spring.domain.product.response.ProductResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,7 +30,7 @@ public class ProductService {
     }
 
     @Transactional
-    public ProductResponse createProduct(CreateProductRequest request) {
+    public ProductResponse createProduct(CreateProductServiceRequest request) {
         String nextProductNumber = createNextProductNumber();
         Product product = request.toEntity(nextProductNumber);
         Product savedProduct = this.productRepository.save(product);

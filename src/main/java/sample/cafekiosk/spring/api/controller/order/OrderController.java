@@ -23,7 +23,7 @@ public class OrderController {
     @PostMapping("/api/v1/orders")
     public ApiResponse<OrderResponse> createOrder(@Valid @RequestBody CreateOrderRequest request) {
         LocalDateTime registeredDateTime = LocalDateTime.now();
-        return ApiResponse.ok(orderService.createOrder(request, registeredDateTime));
+        return ApiResponse.ok(orderService.createOrder(request.toServiceRequest(), registeredDateTime));
     }
 
 }

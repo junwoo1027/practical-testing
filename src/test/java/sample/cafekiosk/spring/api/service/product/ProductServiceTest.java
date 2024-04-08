@@ -64,7 +64,7 @@ class ProductServiceTest {
         CreateProductRequest request = new CreateProductRequest(ProductType.BAKERY, ProductSellingStatus.SELLING, "카페라떼", 4500);
 
         // when
-        ProductResponse result = productService.createProduct(request);
+        ProductResponse result = productService.createProduct(request.toServiceRequest());
 
         // then
         assertThat(result)
@@ -88,7 +88,7 @@ class ProductServiceTest {
         CreateProductRequest request = new CreateProductRequest(ProductType.BAKERY, ProductSellingStatus.SELLING, "카페라떼", 4500);
 
         // when
-        ProductResponse result = productService.createProduct(request);
+        ProductResponse result = productService.createProduct(request.toServiceRequest());
 
         // then
         assertThat(result)

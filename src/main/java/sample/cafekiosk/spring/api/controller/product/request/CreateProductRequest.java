@@ -3,6 +3,7 @@ package sample.cafekiosk.spring.api.controller.product.request;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import sample.cafekiosk.spring.api.service.product.request.CreateProductServiceRequest;
 import sample.cafekiosk.spring.domain.product.Product;
 import sample.cafekiosk.spring.domain.product.ProductSellingStatus;
 import sample.cafekiosk.spring.domain.product.ProductType;
@@ -18,9 +19,8 @@ public record CreateProductRequest(
         int price
 ) {
 
-    public Product toEntity(String nextProductNumber) {
-        return new Product(
-                nextProductNumber,
+    public CreateProductServiceRequest toServiceRequest() {
+        return new CreateProductServiceRequest(
                 this.type(),
                 this.sellingStatus(),
                 this.name(),

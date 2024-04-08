@@ -2,7 +2,7 @@ package sample.cafekiosk.spring.api.service.order;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import sample.cafekiosk.spring.api.controller.order.request.CreateOrderRequest;
+import sample.cafekiosk.spring.api.service.order.request.CreateOrderServiceRequest;
 import sample.cafekiosk.spring.domain.order.Order;
 import sample.cafekiosk.spring.domain.order.OrderRepository;
 import sample.cafekiosk.spring.domain.order.response.OrderResponse;
@@ -32,7 +32,7 @@ public class OrderService {
     }
 
     @Transactional
-    public OrderResponse createOrder(CreateOrderRequest request, LocalDateTime registeredDateTime) {
+    public OrderResponse createOrder(CreateOrderServiceRequest request, LocalDateTime registeredDateTime) {
         List<String> productNumbers = request.productNumbers();
         List<Product> products = findProductsBy(productNumbers);
 
