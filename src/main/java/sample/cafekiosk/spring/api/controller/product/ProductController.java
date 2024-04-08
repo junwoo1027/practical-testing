@@ -1,12 +1,14 @@
 package sample.cafekiosk.spring.api.controller.product;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import sample.cafekiosk.spring.api.service.order.request.CreateProductRequest;
+import sample.cafekiosk.spring.api.ApiResponse;
+import sample.cafekiosk.spring.api.controller.product.request.CreateProductRequest;
 import sample.cafekiosk.spring.api.service.product.ProductService;
-import sample.cafekiosk.spring.api.service.product.response.ProductResponse;
+import sample.cafekiosk.spring.domain.product.response.ProductResponse;
 
 import java.util.List;
 
@@ -20,13 +22,13 @@ public class ProductController {
     }
 
     @GetMapping("/api/v1/products/selling")
-    public List<ProductResponse> getSellingProducts() {
-        return this.productService.getSellingProducts();
+    public ApiResponse<List<ProductResponse>> getSellingProducts() {
+        return ApiResponse.ok(this.productService.getSellingProducts());
     }
 
     @PostMapping("/api/v1/products")
-    public ProductResponse createProduct(@RequestBody CreateProductRequest request) {
-        return this.productService.createProduct(request);
+    public ApiResponse<ProductResponse> createProduct(@Valid @RequestBody CreateProductRequest request) {
+        return ApiResponse.ok(this.productService.createProduct(request));
     }
 
 }

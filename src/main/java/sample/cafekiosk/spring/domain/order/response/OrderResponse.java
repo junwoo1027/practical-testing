@@ -1,6 +1,6 @@
 package sample.cafekiosk.spring.domain.order.response;
 
-import sample.cafekiosk.spring.api.service.product.response.ProductResponse;
+import sample.cafekiosk.spring.domain.product.response.ProductResponse;
 import sample.cafekiosk.spring.domain.order.Order;
 
 import java.time.LocalDateTime;

@@ -4,7 +4,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import sample.cafekiosk.spring.api.controller.order.request.CreateOrderRequest;
 import sample.cafekiosk.spring.domain.order.Order;
-import sample.cafekiosk.spring.domain.orderproduct.OrderProductRepository;
 import sample.cafekiosk.spring.domain.order.OrderRepository;
 import sample.cafekiosk.spring.domain.order.response.OrderResponse;
 import sample.cafekiosk.spring.domain.product.Product;
@@ -23,13 +22,11 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final OrderProductRepository orderProductRepository;
     private final ProductRepository productRepository;
     private final StockRepository stockRepository;
 
-    public OrderService(OrderRepository orderRepository, OrderProductRepository orderProductRepository, ProductRepository productRepository, StockRepository stockRepository) {
+    public OrderService(OrderRepository orderRepository, ProductRepository productRepository, StockRepository stockRepository) {
         this.orderRepository = orderRepository;
-        this.orderProductRepository = orderProductRepository;
         this.productRepository = productRepository;
         this.stockRepository = stockRepository;
     }
