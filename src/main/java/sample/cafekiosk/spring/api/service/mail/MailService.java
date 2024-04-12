@@ -27,6 +27,11 @@ public class MailService {
                     content
                 )
             );
+
+            mailSendClient.a();
+            mailSendClient.b();
+            mailSendClient.c();
+
             return true;
         }
 
