@@ -63,7 +63,7 @@ public class GuavaLearningTest {
 
         // then
         assertThat(results).hasSize(3)
-                .isEqualTo(List.of("아메리카노, 카페라떼, 카푸치노"));
+                .isEqualTo(List.of("아메리카노", "카페라떼", "카푸치노"));
     }
 
     @TestFactory
